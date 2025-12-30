@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You are special!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-hearts" id="bgHearts"></div>
+
+    <div class="container">
+        <div id="screen1" class="screen active">
+            <div class="avatar-container">
+                <img src="https://media.tenor.com/6_JvS9JmN7IAAAAi/cute-bear.gif" class="avatar">
+            </div>
+            <h1 class="pink-text">Hey Nanna</h1>
+            <b class="subtitle">Do you even know how cute you are?</b>
+            <button class="btn bounce" onclick="nextScreen(1, 2)">Open My Heart 🤍</button>
+        </div>
+
+        <div id="screen2" class="screen">
+            <h2 class="pink-text">Measuring your cuteness...</h2>
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+            <p id="percentage">0%</p>
+            <p id="warning" class="hidden">⚠️ WARNING: TOO CUTE TO HANDLE</p>
+        </div>
+
+        <div id="screen3" class="screen">
+            <h2 class="pink-text">Just for you</h2>
+            <p>Tap each one to reveal</p>
+            <div class="note-list">
+                <button class="reveal-btn" onclick="reveal(this, 'You’re my comfort.')">♡</button>
+                <button class="reveal-btn" onclick="reveal(this, 'You make me smile')">♡</button>
+                <button class="reveal-btn" onclick="reveal(this, 'You feel like home to me')">♡</button>
+                <button class="reveal-btn" onclick="reveal(this, 'You make everything feel special')">♡</button>
+                <button class="reveal-btn" onclick="reveal(this, 'I Feel Lucky to have You')">♡</button>
+            </div>
+            <button class="btn hidden" id="seeMore" onclick="nextScreen(3, 4)">See more →</button>
+        </div>
+
+        <div id="screen4" class="screen">
+    <h2 class="pink-text">A little note for you</h2>
+    
+    <div class="card-container" onclick="flipCard()">
+        <div id="card-inner" class="card-inner">
+            <div class="card-front">
+                <div class="gift-bow">🎀</div>
+                <p>Tap to open your gift</p>
+                <div class="heart-seal">💖</div>
+            </div>
+            
+            <div class="card-back">
+                <div class="letter-content">
+                    <p>I just wanted to tell you something... you are really special in a way that's hard to explain.</p>
+                    <p>You mean more to me than I can ever explain.</p>
+                    <p>You bring me peace, comfort, and a quiet kind of happiness.</p>
+                    <p>I don’t need anything more. I just want you. Only Youu</p>
+                    <button class="btn" onclick="event.stopPropagation(); nextScreen(4, 5)">One more thing</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="screen5" class="screen">
+            <div class="avatar-container">
+                <img src="https://media.tenor.com/T_7_S_p-z_IAAAAi/cute-bear.gif" class="avatar">
+            </div>
+            <h1 class="pink-text">I Love You Soo Much Chinni Thalli 💗</h1>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
