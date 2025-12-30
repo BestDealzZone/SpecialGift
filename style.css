@@ -5,12 +5,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Changed to min-height for mobile scrolling */
+    height: 100vh;
     margin: 0;
-    overflow: hidden; /* Prevents stray scrollbars */
+    overflow: hidden;
 }
 
-/* Background Hearts Animation */
+/* Background Hearts */
 .bg-hearts {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -28,27 +28,44 @@ body {
     to { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
 }
 
-/* Screens - Optimized for flexible widths */
-.screen { 
-    display: none; 
-    width: 90%; 
-    max-width: 380px; 
-    text-align: center; 
-    margin: auto;
-}
+/* Screens */
+.screen { display: none; width: 90%; max-width: 380px; text-align: center; }
 .active { display: block; animation: slideFade 0.6s ease-out; }
 
-.pink-text { color: #ff4d94; }
+.pink-text { color: #ff4d94; margin-bottom: 10px; }
+
+/* Subtitle and Button Spacing Fix */
+.subtitle {
+    display: block;
+    margin-bottom: 45px; /* Added extra space between text and button */
+    font-size: 1.1rem;
+    font-weight: 500;
+    white-space: nowrap; /* Forces the text to stay on one single line */
+    width: 100%;
+    text-align: center;
+}
+
+.btn {
+    background: #ff4d94; 
+    border: none; 
+    padding: 12px 30px;
+    color: white; 
+    border-radius: 50px; 
+    cursor: pointer;
+    font-weight: bold; 
+    margin-top: 10px; /* Button paina kuda space maintain cheyadaniki */
+    box-shadow: 0 0 15px rgba(255, 77, 148, 0.6);
+    width: auto;
+}
 
 /* THE NEON WARNING */
 #warning {
-    font-size: 1.5rem; /* Adjusted for mobile scale */
+    font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
     text-shadow: 0 0 7px #fff, 0 0 10px #ff4d94, 0 0 21px #ff4d94;
     animation: neonPulse 1.5s infinite alternate;
-    margin-top: 20px;
-    word-wrap: break-word; /* Ensures text stays on screen */
+    margin-top: 15px;
 }
 
 @keyframes neonPulse {
@@ -56,43 +73,10 @@ body {
     to { opacity: 0.8; transform: scale(1.05); }
 }
 
-/* Progress Bar */
-.progress-bar { width: 100%; height: 14px; background: #1a1a1a; border-radius: 20px; margin: 20px 0; border: 1px solid #333; }
-.progress { 
-    height: 100%; width: 0%; background: #ff4d94; 
-    box-shadow: 0 0 20px #ff4d94; 
-    border-radius: 20px;
-}
-
-/* Responsive Buttons */
-.btn {
-    background: #ff4d94; border: none; padding: 12px 30px;
-    color: white; border-radius: 50px; cursor: pointer;
-    font-weight: bold; margin-top: 25px;
-    box-shadow: 0 0 15px rgba(255, 77, 148, 0.6);
-    -webkit-tap-highlight-color: transparent; /* Removes mobile tap box */
-}
-
-.reveal-btn {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 77, 148, 0.3);
-    color: #ff4d94; padding: 15px; margin: 8px 0;
-    border-radius: 15px; cursor: pointer;
-    font-size: 14px;
-}
-
-.reveal-btn.revealed {
-    background: rgba(255, 77, 148, 0.2);
-    border: 1px solid #ff4d94; color: white;
-}
-
-/* MOBILE FRIENDLY GIFT CARD */
+/* GIFT CARD - Short & Clean */
 .card-container {
-    width: 100%; /* Flexible width */
-    max-width: 300px;
-    aspect-ratio: 3 / 4; /* Maintains shape on all screens */
+    width: 280px; 
+    height: 350px; 
     margin: 20px auto;
     perspective: 1000px;
 }
@@ -115,16 +99,16 @@ body {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
     box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .card-front {
     background: linear-gradient(135deg, #ff85b3 0%, #ff4d94 100%);
     border: 3px solid white;
-    box-shadow: 0 10px 30px rgba(255, 77, 148, 0.4);
+    justify-content: center;
+    align-items: center;
 }
 
 .gift-bow { font-size: 60px; }
@@ -134,21 +118,35 @@ body {
     color: #333;
     transform: rotateY(180deg);
     text-align: left;
-    overflow-y: auto; /* Allows scrolling if text is long on small phones */
+    justify-content: space-between;
 }
 
-.card-back p { font-size: 0.95rem; line-height: 1.4; margin: 8px 0; }
-
-/* MEDIA QUERIES FOR SMALL DEVICES */
-@media (max-width: 360px) {
-    h1 { font-size: 1.5rem; }
-    #warning { font-size: 1.2rem; }
-    .card-container { max-width: 260px; }
-    .card-back p { font-size: 0.85rem; }
+.letter-content {
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.4;
 }
+
+.card-back .btn {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Progress & Buttons */
+.progress-bar { width: 100%; height: 12px; background: #1a1a1a; border-radius: 20px; margin: 15px 0; }
+.progress { height: 100%; width: 0%; background: #ff4d94; box-shadow: 0 0 15px #ff4d94; border-radius: 20px; }
+
+.reveal-btn {
+    width: 100%; background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 77, 148, 0.3);
+    color: #ff4d94; padding: 12px; margin: 5px 0;
+    border-radius: 12px; cursor: pointer;
+}
+
+.reveal-btn.revealed { background: rgba(255, 77, 148, 0.2); border: 1px solid #ff4d94; color: white; }
 
 @keyframes slideFade {
-    from { opacity: 0; transform: translateY(30px); }
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
