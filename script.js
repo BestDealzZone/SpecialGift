@@ -2,7 +2,7 @@
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('floating-heart');
-    const hearts = ['❤️', '💖', '💗', '💓', '✨'];
+    const hearts = ['❤️', '❤️', '❤️', '❤️', '❤️'];
     heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
     
     heart.style.left = Math.random() * 100 + 'vw';
@@ -77,4 +77,5 @@ function flipCard() {
     if (cardInner) {
         cardInner.classList.toggle('is-flipped');
     }
+
 }
